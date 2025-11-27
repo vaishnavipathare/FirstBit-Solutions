@@ -533,5 +533,5 @@ class BankView {
 class TestApp {
 	public static void main(String[] args) {
 		new BankView().start();
-	}
+	} //Main ends here
 }// TestApp Class ends Here
