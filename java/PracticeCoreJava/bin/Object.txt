@@ -1,0 +1,135 @@
+class BankAccount {
+
+    // STATE (attributes)
+    private int accountNumber;
+    private String accountHolder;
+    private double balance;
+
+    // Constructor → giving initial values
+    public BankAccount(int accountNumber, String accountHolder, double balance) {
+        this.accountNumber = accountNumber;
+        this.accountHolder = accountHolder;
+        this.balance = balance;
+    }
+
+    // BEHAVIOUR
+    public void deposit(double amount) {
+        balance = balance + amount;
+        System.out.println("Deposited: " + amount);
+    }
+
+    public void withdraw(double amount) {
+        if (amount <= balance) {
+            balance = balance - amount;
+            System.out.println("Withdrawn: " + amount);
+        } else {
+            System.out.println("Insufficient balance");
+        }
+    }
+
+    public void showDetails() {
+        System.out.println("Account No: " + accountNumber);
+        System.out.println("Holder: " + accountHolder);
+        System.out.println("Balance: " + balance);
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+
+        BankAccount acc1 = new BankAccount(101, "Vaishnavi", 5000);
+        BankAccount acc2 = new BankAccount(102, "Rahul", 3000);
+
+        acc1.deposit(1000);
+        acc2.withdraw(500);
+
+        acc1.showDetails();
+        acc2.showDetails();
+    }
+}
+
+-------------------------------------------------------------------------------
+
+✅ 1. STATE
+
+State = attributes + value given to attributes
+
+Attributes (variables):
+
+private int accountNumber;
+private String accountHolder;
+private double balance;
+
+
+Values (given at object creation):
+
+BankAccount acc1 = new BankAccount(101, "Vaishnavi", 5000);
+accountNumber = 101
+
+accountHolder = "Vaishnavi"
+
+balance = 5000
+
+➡️ This complete combination = STATE of acc1
+
+---------------------------------------------------------------------------------
+
+✅ 2. BEHAVIOUR
+
+Behaviour = response given to outside world
+
+Outside world calls methods:
+
+acc1.deposit(1000);
+acc2.withdraw(500);
+
+
+Object responds by:
+
+Updating balance
+
+Printing messages
+
+📌
+Methods like:
+
+deposit()
+withdraw()
+showDetails()
+➡️ This is behaviour
+
+---------------------------------------------------------------------------------
+
+✅ 3. IDENTITY
+
+Identity = uniqueness associated with object
+
+BankAccount acc1 = new BankAccount(101, "Vaishnavi", 5000);
+BankAccount acc2 = new BankAccount(102, "Rahul", 3000);
+
+Even if two objects have same structure:
+
+acc1 ≠ acc2
+
+Different memory locations
+Different account numbers
+
+➡️ Each object has its own identity
+
+---------------------------------------------------------------------------------
+
+✅ 4. RESPONSIBILITY
+
+Responsibility = role of an object
+
+What is the role of BankAccount object?
+
+Maintain balance
+
+Allow deposit
+
+Allow withdrawal
+
+Show account details
+
+📌
+The object is responsible for managing banking operations for one account
