@@ -42,7 +42,8 @@ void display() {
 
 class Test {
     public static void main(String[] args) {
-        Book b1 = new Book();         b1.display();
+        Book b1 = new Book();         
+	b1.display();
 
         Book b2 = new Book(102, "C++ Basics", "Programming", 450.50);
         b2.display();
