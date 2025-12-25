@@ -1,2 +1,2 @@
 # FirstBit-Solutions
-Assignments and Programs
+Assignments and Programs that i've learned and precticed during my java fullstack course.
